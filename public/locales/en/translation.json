@@ -3,5 +3,9 @@
   "Перевод": "Translate",
   "Главная страница": "Main page",
   "Язык": "English",
-  "О сайте": "About us"
+  "О сайте": "About us",
+  "Страница не найдена": "Page not found ",
+  "Произошла непредвиденная ошибка":"Unexpected error happen",
+  "Обновить страницу":"Reload the page"
+
 }
