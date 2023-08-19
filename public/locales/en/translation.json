@@ -5,9 +5,10 @@
   "Язык": "English",
   "О сайте": "About us",
   "Страница не найдена": "Page not found ",
-  "Произошла непредвиденная ошибка":"Unexpected error happen",
-  "Обновить страницу":"Reload the page",
-  "Сокращен язык":"En",
-  "Войти": "Login"
-
+  "Произошла непредвиденная ошибка": "Unexpected error happen",
+  "Обновить страницу": "Reload the page",
+  "Сокращен язык": "En",
+  "Войти": "Login",
+  "Введите логин": "Enter username",
+  "Введите пароль": "Enter password"
 }
