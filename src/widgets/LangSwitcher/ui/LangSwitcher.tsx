@@ -9,10 +9,12 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher = ({ className , short=false}: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
+  /* i18next-extract-disable-line */
+  const { t, i18n} = useTranslation();
   const toggle = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
+  // const toggle = () =>{}
   return (
     <Button
       className={classNames(style.LangSwitcher, {}, [className])}

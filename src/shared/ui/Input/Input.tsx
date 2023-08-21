@@ -29,7 +29,6 @@ export const Input = memo((props: InputProps) => {
 
   useEffect(() => {
     if (autofocus) {
-        console.log('autj')
       setIsFocused(true);
       ref.current?.focus()    
     }
@@ -52,7 +51,7 @@ export const Input = memo((props: InputProps) => {
 
   return (
     <div className={classNames(style.InputWrapper, {}, [className])}>
-      {placeholder && <div className={style.placeholder}> {`${placeholder}>`}</div>}
+      {placeholder && <div className={style.placeholder}> {`${placeholder} >`}</div>}
       <div className={style.caretWrapper}>
         <input
           ref={ref}
