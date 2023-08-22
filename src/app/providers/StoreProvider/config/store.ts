@@ -23,3 +23,5 @@ export function createReduxStore(initialState: StateShema) {
   store.reducerManager = reducerManager;
   return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

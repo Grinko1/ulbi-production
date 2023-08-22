@@ -16,16 +16,18 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
   className?: string;
+  onSuccess:()=>void
 }
 const initialReducers: ReducersList = {
   login: loginReducer,
 };
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
@@ -44,9 +46,13 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     },
     [dispatch],
   );
-  const onClickLogin = () => {
-    dispatch(loginByUsername({ username, password }));
-  };
+  const onClickLogin = useCallback(async() => {
+    const res = await dispatch(loginByUsername({ username, password }));
+    if(res.meta.requestStatus === 'fulfilled'){
+      onSuccess()
+    }
+  
+  }, [username, password]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>

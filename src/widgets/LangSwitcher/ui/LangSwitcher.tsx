@@ -2,13 +2,14 @@ import { useTranslation } from 'react-i18next';
 import style from './LangSwitcher.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { memo } from 'react';
 
 interface LangSwitcherProps {
   className?: string;
   short?:boolean
 }
 
-export const LangSwitcher = ({ className , short=false}: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className , short=false}: LangSwitcherProps) => {
   /* i18next-extract-disable-line */
   const { t, i18n} = useTranslation();
   const toggle = () => {
@@ -23,4 +24,4 @@ export const LangSwitcher = ({ className , short=false}: LangSwitcherProps) => {
       {t( short ? 'Сокращен язык' : 'Язык')}
     </Button>
   );
-};
+});

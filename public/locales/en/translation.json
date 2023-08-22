@@ -12,5 +12,6 @@
   "Введите логин": "Enter username",
   "Введите пароль": "Enter password",
   "Форма авторизации": "Authorization form",
-  "Неправильный логин или пароль": "Wrong login or password"
+  "Неправильный логин или пароль": "Wrong login or password",
+    "Страница профиля": "Profile page"
 }
